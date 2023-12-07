@@ -1,8 +1,12 @@
 #include "main.h"
 
 /**
+ * my_getenv - Gets the value of an environment variable
+ * @name: The name of the environment variable to get
  *
-*/
+ * Return: a pointer to the value of the environment variable 
+ * or NULL if it does not exist.
+ */
 char *my_getenv(char *name)
 {
 	char *equal;
@@ -11,13 +15,13 @@ char *my_getenv(char *name)
 
 	while (*environment_variable != NULL)
 	{
-		equal = strchr(*environment_variable, '=');
+		equal = _strchr(*environment_variable, '=');
 		if (equal == NULL)
 		{
 			continue;
 		}
 		length = equal - *environment_variable;
-		if (strncmp(*environment_variable, name, length) == 0 && name[length] == '\0')
+		if (_strncmp(*environment_variable, name, length) == 0 && name[length] == '\0')
 		{
 			return (equal + 1);
 		}

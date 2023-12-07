@@ -1,8 +1,11 @@
 #include "main.h"
 
 /**
- * 
-*/
+ * tokenize - Tokenizes the given string into an array of tokenized strings.
+ *
+ * @str: The string to tokenize.
+ * Return: An array of tokenized strings, or NULL on failure.
+ */
 char **tokenize(char *str)
 {
 	char *word;
@@ -22,14 +25,14 @@ char **tokenize(char *str)
 
 	while (word != NULL)
 	{
-		str_array[i] = malloc(sizeof(char) * (strlen(word) + 1));
+		str_array[i] = malloc(sizeof(char) * (_strlen(word) + 1));
 		if (!str_array[i])
 		{
 			free(str_array);
 			printf("Error allocating memory");
 			return (NULL);
 		}
-		strcpy(str_array[i], word);
+		_strcpy(str_array[i], word);
 		word = strtok(NULL, breaker);
 		i++;
 	}

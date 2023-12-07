@@ -1,8 +1,5 @@
 #include "main.h"
 
-char *_strcpy(char *dest, char *src);
-int _strlen(char *s);
-char *_strcat(char *dest, char *src);
 
 /**
  * char *_strcpy - a function that copies the string pointed to by src
@@ -48,33 +45,100 @@ int _strlen(char *s)
 }
 
 /**
- * _strcat - main function of the prototype
+ * _strcmp - The main function
  *
- * @src: Concatenation parameter
+ * @s1: Function value
  *
- * @dest: Concatenation parameter
+ * @s2: Function value
  *
- * Return: dest
+ * Return: s1, s2
 */
 
-char *_strcat(char *dest, char *src)
+int _strcmp(char *s1, char *s2)
 {
-	int l, m;
+	int l = 0;
 
-	l = 0;
-	m = 0;
-
-	while (dest[l] != '\0')
+	while (s1[l] != '\0' && s2[l] != '\0')
 	{
-		l++;
+		if (s1[l] != s2[l])
+		{
+			return (s1[l] - s2[l]);
+		}
+			l++;
 	}
+		return (0);
+}
 
-	while (src[m] != '\0')
+/**
+  * _memcpy - Entrey point
+  *
+  * @src: parameter deal with the function
+  *
+  * @dest: parameter deal with the function
+  *
+  * @n: parameter deal with the function
+  *
+  * Return: Copied memory
+  */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int lol;
+
+	for (lol = 0; lol < n; lol++)
 	{
-		dest[l] = src[m];
-		l++;
-		m++;
+	dest[lol] = src[lol];
 	}
-	dest[l] = '\0';
 	return (dest);
+}
+
+/**
+  * _strchr - Entrey point
+  *
+  * @s: parameter deal with the function
+  *
+  * @c: parameter deal with function
+  *
+  * Return: Always 0
+  */
+
+char *_strchr(char *s, char c)
+{
+	int lmao;
+
+	for (lmao = 0; s[lmao] >= '\0'; lmao++)
+	{
+	if (s[lmao] == c)
+	return (s + lmao);
+	}
+	return (0);
+}
+
+/**
+ * _strdup - entry point
+ *
+ * @str: function parameter
+ *
+ * Return: 0
+ */
+
+char *_strdup(char *str)
+{
+	char *d;
+	int q, w = 0;
+
+	if (str == NULL)
+		return (NULL);
+	q = 0;
+	while (str[q] != '\0')
+		q++;
+
+	d = malloc(sizeof(char) * (q + 1));
+
+	if (d == NULL)
+		return (NULL);
+
+	for (w = 0; str[w]; w++)
+		d[w] = str[w];
+
+	return (d);
 }
