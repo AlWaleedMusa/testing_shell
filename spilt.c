@@ -76,28 +76,3 @@ char **strtow(char *str)
 
 	return (lmao);
 }
-
-/**
- * _strncmp - Compare two strings
- * @str1: First string
- * @str2: Second string
- * @n: Number of characters to compare
- *
- * Return: 0 if first n characters of both strings match
- * or difference between first non-matching characters if they don't match.
- */
-int _strncmp(const char *str1, const char *str2, size_t n)
-{
-	for (; n > 0 && *str1 && (*str1 == *str2); --n, ++str1, ++str2)
-	{
-	}
-
-	if (n == 0 || (*str1 == '\0' && *str2 == '\0'))
-	{
-		return (0); 
-	}
-	else
-	{
-		return (*(unsigned char *)str1 - *(unsigned char *)str2);
-	}
-}
