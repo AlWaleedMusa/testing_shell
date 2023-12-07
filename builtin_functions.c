@@ -1,11 +1,33 @@
 #include "main.h"
 
+/**
+ *
+*/
+int cd_func(char *commands_array[], char *argv)
+{
+	if (commands_array[1] == NULL)
+	{
+		fprintf(stderr, "%s: expected argument to \"cd\"\n", argv);
+	}
+	else
+	{
+		if (chdir(commands_array[1]) != 0)
+		{
+			perror("Error");
+		}
+	}
+	return (0);
+}
+
 
 /**
  * 
 */
-int exit_func(void)
+int exit_func(char *commands_array[], char *argv)
 {
+	(void)commands_array;
+	(void)argv;
+
 	exit(0);
 }
 
@@ -13,9 +35,12 @@ int exit_func(void)
 /**
  * 
 */
-int env_func(void)
+int env_func(char *commands_array[], char *argv)
 {
 	int i = 0;
+
+	(void)commands_array;
+	(void)argv;
 
 	while (environ[i])
 	{
@@ -56,22 +81,19 @@ FuncPtr find_builtin(char *name, struct FuncInfo *funcs, int num_funcs)
 /**
  * 
 */
-int builtin(char *cmd)
+int builtin(char *commands_array[], char *argv)
 {
 	struct FuncInfo funcs[] = {
 		{"exit", exit_func},
-		{"env", env_func}};
+		{"env", env_func},
+		{"cd", cd_func}};
 
 	int num_funcs = sizeof(funcs) / sizeof(struct FuncInfo);
-	FuncPtr func = find_builtin(cmd, funcs, num_funcs);
+	FuncPtr func = find_builtin(commands_array[0], funcs, num_funcs);
 
 	if (func != NULL)
 	{
-		func();
-		while (funcs != NULL)
-		{
-			free(funcs->name);
-		}
+		func(commands_array, argv);
 		return (0);
 	}
 	return (-1);
