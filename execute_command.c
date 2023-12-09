@@ -15,7 +15,7 @@ int execute_cmd(char *commands_array[], char *argv)
 	fork_id = fork();
 	if (fork_id == 0)
 	{
-		if (_strncmp(commands_array[0], "/", 1) == 0)
+		if (strncmp(commands_array[0], "/", 1) == 0)
 		{
 			if (execve(commands_array[0], commands_array, environ) == -1)
 			{

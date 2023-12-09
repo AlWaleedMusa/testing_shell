@@ -21,7 +21,7 @@ char *my_getenv(char *name)
 			continue;
 		}
 		length = equal - *environment_variable;
-		if (_strncmp(*environment_variable, name, length) == 0 && name[length] == '\0')
+		if (strncmp(*environment_variable, name, length) == 0 && name[length] == '\0')
 		{
 			return (equal + 1);
 		}

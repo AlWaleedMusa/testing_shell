@@ -39,4 +39,5 @@ char *_strchr(char *s, char c);
 char *_strdup(char *s);
 char **strtow(char *str);
 int count_word(char *s);
+
 #endif
