@@ -1,13 +1,12 @@
 #include "main.h"
 
-
 /**
  * char *_strcpy - a function that copies the string pointed to by src
  * @dest: copy to
  * @src: copy from
+ * 
  * Return: string
  */
-
 char *_strcpy(char *dest, char *src)
 {
 	int l = 0;
@@ -28,9 +27,9 @@ char *_strcpy(char *dest, char *src)
 /**
  * _strlen - returns the length of a string
  * @s: string
+ * 
  * Return: length
  */
-
 int _strlen(char *s)
 {
 	int longi = 0;
@@ -46,14 +45,11 @@ int _strlen(char *s)
 
 /**
  * _strcmp - The main function
- *
  * @s1: Function value
- *
  * @s2: Function value
  *
  * Return: s1, s2
 */
-
 int _strcmp(char *s1, char *s2)
 {
 	int l = 0;
@@ -71,13 +67,10 @@ int _strcmp(char *s1, char *s2)
 
 /**
   * _memcpy - Entrey point
-  *
   * @src: parameter deal with the function
-  *
   * @dest: parameter deal with the function
-  *
   * @n: parameter deal with the function
-  *
+  * 
   * Return: Copied memory
   */
 char *_memcpy(char *dest, char *src, unsigned int n)
@@ -93,14 +86,11 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 
 /**
   * _strchr - Entrey point
-  *
   * @s: parameter deal with the function
-  *
   * @c: parameter deal with function
   *
   * Return: Always 0
   */
-
 char *_strchr(char *s, char c)
 {
 	int lmao;
@@ -112,32 +102,3 @@ char *_strchr(char *s, char c)
 	}
 	return (0);
 }
-
-/**
- * _strdup - entry point
- *
- * @str: function parameter
- *
- * Return: 0
- */
-
-char *_strdup(char *str)
-{
-	char *d;
-	int q, w = 0;
-
-	if (str == NULL)
-		return (NULL);
-	q = 0;
-	while (str[q] != '\0')
-		q++;
-
-	d = malloc(sizeof(char) * (q + 1));
-
-	if (d == NULL)
-		return (NULL);
-
-	for (w = 0; str[w]; w++)
-		d[w] = str[w];
-
-	return (d);

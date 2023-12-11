@@ -1,12 +1,12 @@
 #include "main.h"
 
 /*
-* main - Entry point for the shell
-* @argc: Number of arguments
-* @argv: Array of arguments
-
-* Return: Always 0
-*/
+ * main - Entry point for the shell
+ * @argc: Number of arguments
+ * @argv: Array of arguments
+ * 
+ * Return: Always 0
+ */
 int main(int argc, char *argv[])
 {
 	char *BUFFER = NULL;
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 			free(commands_array[i]);
 			i++;
 		}
-		free(commands_array); 
+		free(commands_array);
 	}
 	return (0);
 }
