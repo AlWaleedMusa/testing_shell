@@ -3,7 +3,7 @@
 /**
  * tokenize - Tokenize the given string into an array of tokenized strings.
  * @str: The string to tokenize.
- * 
+ *
  * Return: An array of tokenized strings, or NULL on failure.
  */
 char **tokenize(char *str)

@@ -46,7 +46,7 @@ char **strtow(char *str)
 	if (words == 0)
 		return (NULL);
 
-	lmao = (char **) malloc(sizeof(char *) * (words + 1));
+	lmao = (char **)malloc(sizeof(char *) * (words + 1));
 	if (lmao == NULL)
 		return (NULL);
 
@@ -57,7 +57,7 @@ char **strtow(char *str)
 			if (s)
 			{
 				end = w;
-				lol = (char *) malloc(sizeof(char) * (s + 1));
+				lol = (char *)malloc(sizeof(char) * (s + 1));
 				if (lol == NULL)
 					return (NULL);
 				while (start < end)

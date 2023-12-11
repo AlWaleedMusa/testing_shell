@@ -4,7 +4,7 @@
  * my_getenv - Gets the value of an environment variable
  * @name: The name of the environment variable to get
  *
- * Return: a pointer to the value of the environment variable 
+ * Return: a pointer to the value of the environment variable
  * or NULL if it does not exist.
  */
 char *my_getenv(char *name)
