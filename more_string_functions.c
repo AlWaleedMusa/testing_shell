@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strdup - entry point
- * @str: function parameter
+ * _strdup - function that duplicate a string
+ * @str: string passed to the function
  *
- * Return: 0
+ * Return: a pointer to the duplicated string, NULL if no string passed
  */
 char *_strdup(char *str)
 {
